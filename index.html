@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metro Pet Market 9 | Bahçelievler, Ankara</title>
+<meta name="description" content="Metro Pet Market 9: Bahçelievler'de toptan ve perakende evcil hayvan ürünleri. Adrese servis. 35. Cadde 24/A, Çankaya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mist: #E9F0EE;
+    --petrol: #12303A;
+    --mustard: #7CC4E8;
+    --coral: #E8553D;
+    --white: #FFFFFF;
+    --petrol-soft: #3E5A63;
+    --gutter: clamp(16px, 5vw, 56px);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--mist);
+    color: var(--petrol);
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", "Hanken Grotesk", sans-serif;
+    line-height: 1.02;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* Üst şerit */
+  .bar {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding-block: 18px;
+    font-weight: 500;
+  }
+  .bar .brand { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.15rem; text-decoration: none; }
+  .bar a.call { text-decoration: none; font-weight: 700; padding: 10px 16px; border: 2px solid var(--petrol); border-radius: 999px; white-space: nowrap; }
+  .bar a.call:hover { background: var(--petrol); color: var(--white); }
+
+  /* Hero */
+  .hero { padding-bottom: clamp(40px, 7vw, 88px); }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+  .hero-grid > * { min-width: 0; }
+  .hero h1 { font-size: clamp(2.6rem, 8vw, 6.2rem); font-weight: 800; overflow-wrap: break-word; }
+  .hero h1 span { display: block; }
+  .hero .lead { margin: 24px 0 0; max-width: 34ch; font-size: 1.25rem; color: var(--petrol-soft); }
+
+  /* Raf etiketi */
+  .label {
+    background: var(--mustard);
+    border-radius: 14px;
+    padding: clamp(20px, 3vw, 32px);
+    box-shadow: 0 0 0 3px var(--petrol), 8px 10px 0 3px var(--petrol);
+    transform: rotate(-1.6deg);
+    animation: drop .7s cubic-bezier(.2,.9,.3,1.2) both;
+    position: relative;
+  }
+  .label::before {
+    content: ""; position: absolute; top: 14px; right: 18px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--mist); box-shadow: inset 0 0 0 3px var(--petrol);
+  }
+  @keyframes drop { from { transform: translateY(-40px) rotate(4deg); opacity: 0; } to { transform: rotate(-1.6deg); opacity: 1; } }
+  .label h2 { font-size: clamp(1.6rem, 3.4vw, 2.1rem); font-weight: 800; max-width: 12ch; }
+  .label p { margin: 8px 0 18px; font-weight: 500; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0 0 22px; border: 0; }
+  .chips legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .chips label {
+    cursor: pointer; font-weight: 700; padding: 10px 18px; border-radius: 999px;
+    border: 2.5px solid var(--petrol); background: transparent; user-select: none;
+    transition: background .15s, color .15s;
+  }
+  .chips input { position: absolute; opacity: 0; pointer-events: none; }
+  .chips input:checked + span { background: var(--petrol); color: var(--white); }
+  .chips label { padding: 0; }
+  .chips label span { display: block; padding: 10px 18px; border-radius: 999px; }
+  .chips input:focus-visible + span { outline: 3px solid var(--coral); outline-offset: 3px; }
+  .chips label:hover span { background: rgba(18,48,58,.1); }
+  .chips input:checked + span:hover { background: var(--petrol); }
+  .cta {
+    display: block; text-align: center; text-decoration: none; font-weight: 800; font-size: 1.1rem;
+    background: var(--petrol); color: var(--white); padding: 16px 20px; border-radius: 12px;
+  }
+  .cta:hover { background: #0b2028; }
+  .label .alt { margin: 14px 0 0; font-size: .95rem; }
+  .label .alt a { font-weight: 700; }
+
+  /* Bölümler */
+  section { padding: clamp(40px, 7vw, 88px) 0; }
+  .section-head { margin-bottom: 32px; }
+  .section-head h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; max-width: 15em; }
+
+  .reasons { background: var(--white); }
+  .reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 48px); }
+  .reason h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+  .reason p { margin: 0; color: var(--petrol-soft); }
+  .rating {
+    display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+    margin-top: 44px; padding-top: 28px; border-top: 3px solid var(--petrol);
+  }
+  .rating strong { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(3rem, 8vw, 5rem); font-weight: 800; line-height: 1; }
+  .rating span { font-weight: 500; max-width: 36ch; }
+
+  .ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .way { padding: 26px; border-radius: 16px; background: var(--white); border: 3px solid var(--petrol); }
+  .way:nth-child(2) { background: var(--mustard); }
+  .way:nth-child(3) { background: var(--petrol); color: var(--white); border-color: var(--petrol); }
+  .way h3 { font-size: 1.45rem; font-weight: 800; margin-bottom: 8px; }
+  .way p { margin: 0; }
+
+  .visit { background: var(--petrol); color: var(--white); }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .visit h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; }
+  .visit address { font-style: normal; font-size: 1.25rem; margin: 20px 0; }
+  .visit dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; }
+  .visit dt { color: var(--mustard); font-weight: 700; }
+  .visit dd { margin: 0; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { text-decoration: none; font-weight: 800; padding: 15px 22px; border-radius: 12px; }
+  .btn.primary { background: var(--mustard); color: var(--petrol); }
+  .btn.primary:hover { background: #9cd3ee; }
+  .btn.ghost { border: 2.5px solid var(--white); color: var(--white); }
+  .btn.ghost:hover { background: var(--white); color: var(--petrol); }
+
+  /* Çizimler */
+  .pet-art { display: block; height: auto; overflow: visible; }
+  .label .cat {
+    position: absolute; right: clamp(20px, 6%, 48px); bottom: calc(100% - 3px);
+    width: clamp(96px, 14vw, 128px); z-index: 1; pointer-events: none;
+  }
+  .hero { position: relative; padding-top: calc(clamp(24px, 6vw, 72px) + 56px); }
+  .hero .wrap { position: relative; }
+  .paws { position: absolute; left: max(var(--gutter), calc((100% - 1120px) / 2 + var(--gutter))); bottom: 14px; display: flex; gap: 22px; opacity: .22; color: var(--petrol); pointer-events: none; }
+  .paws svg { width: 26px; height: 26px; fill: currentColor; }
+  .paws svg:nth-child(odd) { transform: rotate(-14deg) translateY(-10px); }
+  .paws svg:nth-child(even) { transform: rotate(12deg); }
+  .head-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+  .head-row .section-head { margin-bottom: 32px; }
+  .head-row .dog { width: clamp(96px, 14vw, 132px); flex: none; margin-bottom: 24px; }
+  .pets { display: flex; align-items: flex-end; gap: 12px; margin-top: 28px; padding-bottom: 0; border-bottom: 4px solid var(--mustard); max-width: 320px; }
+  .pets .cat { --cat-body: var(--mustard); width: 104px; }
+  .pets .dog { width: 112px; }
+
+  footer { padding: 28px 0 40px; font-size: .9rem; color: var(--petrol-soft); }
+
+  @media (max-width: 860px) {
+    .hero-grid, .visit-grid { grid-template-columns: 1fr; }
+    .reasons-grid, .ways-grid { grid-template-columns: 1fr; }
+    .label { transform: rotate(-1deg); }
+    .paws { display: none; }
+    .hero { padding-top: 24px; }
+  }
+  /* Telefon: daha ferah boşluklar ve büyük dokunma alanları */
+  @media (max-width: 640px) {
+    :root { --gutter: 24px; }
+    body { font-size: 1.0625rem; line-height: 1.7; }
+    .bar { padding-block: 18px; }
+    .bar { gap: 12px; }
+    .bar .brand { font-size: 1rem; white-space: nowrap; }
+    .bar a.call { padding: 9px 12px; font-size: .9rem; }
+
+    .hero { padding-top: 40px; padding-bottom: 72px; }
+    .hero-grid { gap: 112px; }
+    .label .cat { width: 92px; }
+    .hero h1 { font-size: 3.1rem; line-height: 1; }
+    .hero .lead { margin-top: 24px; font-size: 1.15rem; line-height: 1.6; max-width: none; }
+
+    .label { padding: 28px 24px 26px; }
+    .label h2 { font-size: 1.9rem; }
+    .label p { margin: 10px 0 22px; }
+    .chips { gap: 12px; margin-bottom: 26px; }
+    .chips label span { padding: 13px 20px; font-size: 1.02rem; }
+    .cta { padding: 19px 20px; font-size: 1.15rem; }
+    .label .alt { margin-top: 18px; }
+
+    section { padding: 72px 0; }
+    .section-head { margin-bottom: 36px; }
+    .section-head h2 { font-size: 2.1rem; line-height: 1.08; }
+
+    .reasons-grid { gap: 0; }
+    .reason { padding: 26px 0; border-top: 2px solid rgba(18,48,58,.14); }
+    .reason:first-child { border-top: 0; padding-top: 0; }
+    .reason h3 { font-size: 1.45rem; margin-bottom: 8px; }
+    .rating { margin-top: 28px; padding-top: 32px; gap: 10px 16px; }
+
+    .head-row { align-items: flex-end; }
+    .head-row .dog { width: 96px; margin-bottom: 36px; }
+    .ways-grid { gap: 18px; }
+    .way { padding: 28px 24px; }
+    .way h3 { font-size: 1.5rem; margin-bottom: 10px; }
+
+    .visit-grid { gap: 40px; }
+    .visit address { font-size: 1.25rem; line-height: 1.7; margin: 24px 0; }
+    .visit dl { gap: 10px 20px; }
+    .btns { flex-direction: column; gap: 14px; }
+    .btn { text-align: center; padding: 18px 22px; font-size: 1.05rem; }
+    .pets { margin: 18px auto 0; justify-content: center; }
+
+    footer { padding: 28px 0 48px; line-height: 1.6; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .label { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Çizimler: kedi, köpek, pati -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="cat" viewBox="0 0 170 170">
+      <path d="M118 148 C165 150 168 96 140 92" fill="none" stroke="var(--cat-body,#12303A)" stroke-width="13" stroke-linecap="round"/>
+      <ellipse cx="80" cy="128" rx="42" ry="38" style="fill:var(--cat-body,#12303A)"/>
+      <ellipse cx="80" cy="136" rx="16" ry="22" fill="#fff"/>
+      <polygon points="46,54 48,12 78,40" style="fill:var(--cat-body,#12303A)"/>
+      <polygon points="114,54 112,12 82,40" style="fill:var(--cat-body,#12303A)"/>
+      <polygon points="53,45 54,26 69,40" fill="#E8553D"/>
+      <polygon points="107,45 106,26 91,40" fill="#E8553D"/>
+      <ellipse cx="80" cy="70" rx="40" ry="34" style="fill:var(--cat-body,#12303A)"/>
+      <ellipse cx="65" cy="67" rx="7.5" ry="8.5" fill="#7CC4E8"/>
+      <ellipse cx="95" cy="67" rx="7.5" ry="8.5" fill="#7CC4E8"/>
+      <ellipse cx="65" cy="67" rx="2.6" ry="6.5" fill="#12303A"/>
+      <ellipse cx="95" cy="67" rx="2.6" ry="6.5" fill="#12303A"/>
+      <polygon points="74,80 86,80 80,87" fill="#E8553D"/>
+      <path d="M80 87 v4 M80 91 q-5 5 -10 1 M80 91 q5 5 10 1" fill="none" stroke="#E9F0EE" stroke-width="2" stroke-linecap="round"/>
+      <path d="M52 82 L26 77 M52 89 L26 91 M108 82 L134 77 M108 89 L134 91" fill="none" stroke="#E9F0EE" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="dog" viewBox="0 0 170 180">
+      <path d="M124 150 q30 -2 26 -34" fill="none" stroke="#12303A" stroke-width="17" stroke-linecap="round"/>
+      <path d="M124 150 q30 -2 26 -34" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+      <ellipse cx="85" cy="138" rx="40" ry="38" fill="#fff" stroke="#12303A" stroke-width="5"/>
+      <rect x="60" y="148" width="18" height="28" rx="9" fill="#fff" stroke="#12303A" stroke-width="5"/>
+      <rect x="92" y="148" width="18" height="28" rx="9" fill="#fff" stroke="#12303A" stroke-width="5"/>
+      <ellipse cx="85" cy="72" rx="38" ry="34" fill="#fff" stroke="#12303A" stroke-width="5"/>
+      <path d="M52 50 C26 48 22 92 44 100 C55 92 57 70 52 50Z" fill="#E8553D" stroke="#12303A" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M118 50 C144 48 148 92 126 100 C115 92 113 70 118 50Z" fill="#E8553D" stroke="#12303A" stroke-width="5" stroke-linejoin="round"/>
+      <ellipse cx="85" cy="86" rx="19" ry="14" fill="#E9F0EE"/>
+      <ellipse cx="85" cy="79" rx="7.5" ry="5.5" fill="#12303A"/>
+      <circle cx="69" cy="64" r="4.8" fill="#12303A"/>
+      <circle cx="101" cy="64" r="4.8" fill="#12303A"/>
+      <path d="M85 85 v6 M85 91 q-6 6 -12 0 M85 91 q6 6 12 0" fill="none" stroke="#12303A" stroke-width="3" stroke-linecap="round"/>
+      <path d="M80 96 q5 13 10 0z" fill="#E8553D" stroke="#12303A" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M56 102 q29 14 58 0" fill="none" stroke="#7CC4E8" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="85" cy="114" r="6.5" fill="#7CC4E8" stroke="#12303A" stroke-width="3"/>
+    </symbol>
+    <symbol id="paw" viewBox="0 0 40 40">
+      <ellipse cx="20" cy="27" rx="10" ry="8"/>
+      <circle cx="8" cy="16" r="4.5"/><circle cx="16" cy="9.5" r="4.5"/>
+      <circle cx="24" cy="9.5" r="4.5"/><circle cx="32" cy="16" r="4.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="wrap bar">
+  <a class="brand" href="#top">Metro Pet Market 9</a>
+  <a class="call" href="tel:+905532690602">Ara: 0553 269 06 02</a>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1><span>Toptan ve perakende,</span><span>tek dükkânda.</span></h1>
+        <p class="lead">Bahçelievler'de mama, kum ve bakım ürünleri. Dükkâna uğra ya da kapına getirelim.</p>
+      </div>
+
+      <form class="label" onsubmit="return false" aria-labelledby="label-title">
+        <svg class="pet-art cat" viewBox="0 0 170 170" aria-hidden="true"><use href="#cat"/></svg>
+        <h2 id="label-title">Evde kim var?</h2>
+        <p>Birini seç, bize WhatsApp'tan yaz.</p>
+        <fieldset class="chips">
+          <legend>Evcil hayvan türü</legend>
+          <label><input type="radio" name="pet" value="kedim için" checked><span>Kedi</span></label>
+          <label><input type="radio" name="pet" value="köpeğim için"><span>Köpek</span></label>
+          <label><input type="radio" name="pet" value="evcil hayvanım için"><span>Başka</span></label>
+        </fieldset>
+        <a id="wa" class="cta" href="#" target="_blank" rel="noopener">WhatsApp'tan sor</a>
+        <p class="alt">Yazmak istemezsen <a href="tel:+905532690602">hemen ara</a>.</p>
+      </form>
+    </div>
+    <div class="paws" aria-hidden="true">
+      <svg viewBox="0 0 40 40"><use href="#paw"/></svg><svg viewBox="0 0 40 40"><use href="#paw"/></svg><svg viewBox="0 0 40 40"><use href="#paw"/></svg><svg viewBox="0 0 40 40"><use href="#paw"/></svg><svg viewBox="0 0 40 40"><use href="#paw"/></svg>
+    </div>
+  </section>
+
+  <section class="reasons" aria-labelledby="why">
+    <div class="wrap">
+      <div class="section-head"><h2 id="why">Müşterilerimiz neyi sevdiğini yazmış.</h2></div>
+      <div class="reasons-grid">
+        <div class="reason">
+          <h3>İlgili ve bilgili</h3>
+          <p>Yorumlarda ürün seçerken sabırla anlatılması ve doğru önerilerde bulunulması öne çıkıyor.</p>
+        </div>
+        <div class="reason">
+          <h3>Çeşit bol</h3>
+          <p>Müşteriler mama, kedi kumu ve aksesuarlarda çeşidin fazla olduğunu yazmış.</p>
+        </div>
+        <div class="reason">
+          <h3>Toptan ve perakende</h3>
+          <p>Dükkân hem toptan hem perakende satış yapıyor.</p>
+        </div>
+      </div>
+      <div class="rating">
+        <strong>4,8</strong>
+        <span>Google'da 147 değerlendirmenin ortalaması.</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ways">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="section-head"><h2 id="ways">Mamayı nasıl alırsın?</h2></div>
+        <svg class="pet-art dog" viewBox="0 0 170 180" aria-hidden="true"><use href="#dog"/></svg>
+      </div>
+      <div class="ways-grid">
+        <div class="way">
+          <h3>Dükkânda</h3>
+          <p>Gel, raflara bak, ihtiyacını birlikte seçelim.</p>
+        </div>
+        <div class="way">
+          <h3>Önce sor</h3>
+          <p>Aradığın ürün var mı diye yaz ya da ara, sonra uğra.</p>
+        </div>
+        <div class="way">
+          <h3>Adrese servis</h3>
+          <p>Siparişini yaz, kapına getirelim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" aria-labelledby="visit">
+    <div class="wrap visit-grid">
+      <div>
+        <h2 id="visit">Bizi bul.</h2>
+        <address>Bahçelievler<br>35. Cadde 24/A<br>Çankaya, Ankara</address>
+        <dl>
+          <dt>Telefon</dt><dd><a href="tel:+905532690602">0553 269 06 02</a></dd>
+          <dt>WhatsApp</dt><dd><a href="https://wa.me/905532690602" target="_blank" rel="noopener">0553 269 06 02</a></dd>
+          <dt>Kapanış</dt><dd>20:30</dd>
+        </dl>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Metro+Pet+Market+9+35.+Cadde+24/A+Ankara" target="_blank" rel="noopener">Yol tarifi al</a>
+        <a class="btn ghost" href="https://wa.me/905532690602" target="_blank" rel="noopener">WhatsApp'tan yaz</a>
+        <a class="btn ghost" href="tel:+905532690602">Ara</a>
+        <div class="pets" aria-hidden="true">
+          <svg class="pet-art cat" viewBox="0 0 170 170"><use href="#cat"/></svg>
+          <svg class="pet-art dog" viewBox="0 0 170 180"><use href="#dog"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Demo tasarım. Metinler ve iletişim bilgileri Metro Pet Market 9 işletmesinin herkese açık Google Haritalar kaydına dayanır.</p>
+</footer>
+
+<script>
+  (function () {
+    var phone = "905532690602";
+    var link = document.getElementById("wa");
+    function update() {
+      var sel = document.querySelector('input[name="pet"]:checked');
+      var who = sel ? sel.value : "evcil hayvanım için";
+      var text = "Merhaba, " + who + " mama ve ürünler hakkında bilgi almak istiyorum.";
+      link.href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+    }
+    document.querySelectorAll('input[name="pet"]').forEach(function (el) {
+      el.addEventListener("change", update);
+    });
+    update();
+  })();
+</script>
+</body>
+</html>
